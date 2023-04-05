@@ -4,17 +4,19 @@ export default function Thumbnail() {
   return (
     <div className="bg-came-blue p-5">
       {mainData.map((item) => (
-        <div className="flex items-center justify-center mt-12">
+        <div className="flex items-center justify-center mt-12" key={item.id}>
           <a
             className="relative block w-full h-full bg-gray-900 group rounded-lg"
             href={`/${item.id}`}
             key={item.id}
           >
+            {/* eslint-disable */}
             <img
               className="absolute inset-0 object-cover w-full h-full group-hover:opacity-50 rounded-lg"
               src={item.cover}
               alt={item.id}
             />
+            {/* eslint-enable */}
             <div className="relative p-5">
               <div className="mt-80">
                 <div className="transition-all transform translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
